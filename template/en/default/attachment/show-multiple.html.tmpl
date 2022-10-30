@@ -6,7 +6,6 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% filtered_summary = bugsummary FILTER html %]
 [% header = BLOCK %]View All Attachments for
   [%+ "$terms.Bug $bug.id" FILTER bug_link(bug) FILTER none %][% END %]
 
@@ -17,7 +16,6 @@
 [% PROCESS global/header.html.tmpl
   title = title
   header = header
-  subheader = filtered_summary
   style_urls = ['skins/standard/bug.css']
 %]
 [% IF hide_obsolete %]

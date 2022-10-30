@@ -6,14 +6,12 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% filtered_desc = blocked_tree.$bugid.short_desc FILTER html %]
 [% PROCESS global/header.html.tmpl
    title           = "Dependency tree for $terms.Bug $bugid"
    header          = "Dependency tree for 
                       <a href=\"show_bug.cgi?id=$bugid\">$terms.Bug $bugid</a>"
    javascript_urls = ["js/expanding-tree.js"]
    style_urls      = ['skins/standard/bug.css']
-   subheader       = filtered_desc
    doc_section     = "using/understanding.html"
 %]
 

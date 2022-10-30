@@ -10,7 +10,6 @@
   # (All the below interface elements are optional.)
   # title: string. Page title.
   # header: string. Main page header.
-  # subheader: string. Page subheader.
   # bodyclasses: array of extra CSS classes for the <body>
   # onload: string. JavaScript code to run when the page finishes loading.
   # javascript: string. Javascript to go in the header.
@@ -27,7 +26,6 @@
 [% END %]
 
 [% DEFAULT
-  subheader = ""
   onload = ""
   style_urls = []
   javascript_urls = []
@@ -222,13 +220,6 @@
 
   <div id="header">
     [% INCLUDE global/banner.html.tmpl %]
-
-    <div id="titles">
-      [% IF subheader %]
-        <span id="subtitle" class="subheader">[% subheader %]</span>
-      [% END %]
-    </div>
-
     [% USE Bugzilla %]
     [% IF Bugzilla.languages.size > 1 %]
       <div id="lang_links_container" class="bz_default_hidden">

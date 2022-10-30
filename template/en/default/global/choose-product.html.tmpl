@@ -15,7 +15,6 @@
 
 [% IF target == "enter_bug.cgi" %]
   [% title = "Enter $terms.Bug" %]
-  [% subheader = "Select Product" %]
   [% h2 = BLOCK %]
     [% IF Param('useclassification') %]Next[% ELSE %]First[% END %],
     you must pick a product on which to enter [% terms.abug %]:

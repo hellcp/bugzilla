@@ -22,8 +22,6 @@
   # dont_show_button: boolean. Prevent the display of the "Submit Changes" button.
   #%]
 
-[% filtered_login = user.login FILTER html %]
-
 [% tabs = [{ name => "settings", label => "General Preferences",
               link => "userprefs.cgi?tab=settings", saveable => "1",
               doc_section => "using/preferences.html#general-preferences" },
@@ -54,7 +52,6 @@
 
 [% PROCESS global/header.html.tmpl
    title = current_tab.label
-   subheader = filtered_login
    generate_api_token = 1
    style_urls = ['skins/standard/admin.css']
    javascript_urls = ['js/util.js', 'js/field.js', 'js/TUI.js']

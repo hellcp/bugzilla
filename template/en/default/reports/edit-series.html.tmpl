@@ -7,11 +7,6 @@
   #%]
 
 [% title = "Edit Series" %]
-[% subheader = BLOCK %]
-  [% default.category FILTER html %] / 
-  [%+ default.subcategory FILTER html %] /
-  [%+ default.name FILTER html %]
-[% END %]
 
 [% PROCESS global/header.html.tmpl
   style_urls = ['skins/standard/buglist.css']

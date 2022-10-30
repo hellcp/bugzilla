@@ -14,10 +14,8 @@
   #%]
 
 [% filtered_alias = bug.alias.join(', ') FILTER html %]
-[% filtered_desc = bug.short_desc FILTER html %]
 [% filtered_timestamp = bug.delta_ts FILTER time %]
 
-[% subheader = filtered_desc %]
 [% title = "$bug.bug_id &ndash; " %]
 [% IF bug.alias.size %]
   [% title = title _ "($filtered_alias) " %]
