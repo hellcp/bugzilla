@@ -94,7 +94,6 @@
     'javascript',                   'style',
     'onload',                       'title',
     '" &ndash; $header" IF header', 'subheader',
-    'header_addl_info',             'message',
   ],
 
   'global/messages.html.tmpl' => ['series.frequency * 2',],

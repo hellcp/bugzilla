@@ -11,7 +11,6 @@
   # title: string. Page title.
   # header: string. Main page header.
   # subheader: string. Page subheader.
-  # header_addl_info: string. Additional header information.
   # bodyclasses: array of extra CSS classes for the <body>
   # onload: string. JavaScript code to run when the page finishes loading.
   # javascript: string. Javascript to go in the header.
@@ -29,7 +28,6 @@
 
 [% DEFAULT
   subheader = ""
-  header_addl_info = ""
   onload = ""
   style_urls = []
   javascript_urls = []
@@ -90,6 +88,7 @@
     [% END %]
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="[% terms.Bugzilla _ " " _ constants.BUGZILLA_VERSION FILTER html %]">
 
     [% SET yui = yui_resolve_deps(yui, yui_deps) %]
 
@@ -227,10 +226,6 @@
     <div id="titles">
       [% IF subheader %]
         <span id="subtitle" class="subheader">[% subheader %]</span>
-      [% END %]
-
-      [% IF header_addl_info %]
-        <span id="information" class="header_addl_info">[% header_addl_info %]</span>
       [% END %]
     </div>
 

@@ -54,8 +54,7 @@
 
 [% time = time FILTER time('%Y-%m-%d %H:%M:%S') FILTER html %]
 
-[% PROCESS global/header.html.tmpl 
-  header_addl_info = time
+[% PROCESS global/header.html.tmpl
   style_urls = ['skins/standard/buglist.css']
   yui = ['datatable']
 %]
