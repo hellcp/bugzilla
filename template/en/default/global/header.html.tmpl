@@ -225,8 +225,6 @@
     [% INCLUDE global/banner.html.tmpl %]
 
     <div id="titles">
-      <span id="title">[% terms.Bugzilla %][% " &ndash; $header" IF header %]</span>
-
       [% IF subheader %]
         <span id="subtitle" class="subheader">[% subheader %]</span>
       [% END %]
@@ -242,7 +240,6 @@
         <ul class="links">
           [% FOREACH lang = Bugzilla.languages.sort %]
             <li>
-              [% IF NOT loop.first %]<span class="separator"> | </span>[% END %]
               [% IF lang == current_language %]
                 <span class="lang_current">[% lang FILTER html FILTER upper %]</span>
               [% ELSE %]
@@ -255,7 +252,7 @@
       </div>
     [% END %]
 
-    <div id="common_links">
+    <div class="inner">
       [% PROCESS "global/common-links.html.tmpl" qs_suffix = "_top" %]
     </div>
   </div>
