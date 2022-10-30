@@ -253,6 +253,23 @@
     [% END %]
 
     <div class="inner">
+      <h1 id="header-title" class="title"><a href="./" title="Go to home page">[% terms.Bugzilla %]</a></h1>
+      <form action="buglist.cgi" method="get"
+            onsubmit="if (this.quicksearch.value == '')
+                      { alert('Please enter one or more search terms first.');
+                        return false; } return true;">
+        <input type="hidden" id="no_redirect[% qs_suffix FILTER html %]" name="no_redirect" value="0">
+        <script type="text/javascript">
+          if (history && history.replaceState) {
+            var no_redirect = document.getElementById("no_redirect[% qs_suffix FILTER js %]");
+            no_redirect.value = 1;
+          }
+        </script>
+        <input class="txt" type="text" id="quicksearch[% qs_suffix FILTER html %]" name="quicksearch" 
+               title="Quick Search" value="[% quicksearch FILTER html %]">
+        <input class="btn" type="submit" value="Search" 
+               id="find[% qs_suffix FILTER html %]">
+      </form>
       [% PROCESS "global/common-links.html.tmpl" qs_suffix = "_top" %]
     </div>
   </div>
